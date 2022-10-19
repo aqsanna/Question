@@ -26,12 +26,12 @@ public class Minimum {
     }
 
     public int maxCount(int[] arr3) {
-        int count = 1;
+        int count = 0;
         int max = arr3[0];
         for (int i = 1; i < arr3.length; i++) {
             if (arr3[i] > max) {
-                count += 1;
-                max = arr3[i];
+                count++;
+
             }
         }
         return count;
@@ -40,10 +40,10 @@ public class Minimum {
     public static void main(String[] args) {
         Minimum minimum = new Minimum();
         int[] array = {4, 2, 14, -1};
-        int[] array2 = {6, 7, 2, -5, -10, 15, 1};
-        int n = array2.length;
+        int[] array2 = {6, 7, 2, -5, -10, 15, 11};
+        int[] array3 ={6, 7, 2, -5, -10, 15, 11,15,50,7};
         minimum.min(array);
         System.out.println(minimum.minSecondElement(array2));
-        System.out.println(minimum.maxCount(array2));
+        System.out.println(minimum.maxCount(array3));
     }
 }
