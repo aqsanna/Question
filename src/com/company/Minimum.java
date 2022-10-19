@@ -1,50 +1,49 @@
 package com.company;
 
 public class Minimum {
-    public void min(int[] arr){
-        int min =arr[0];
-        for(int i =0; i<arr.length; i++){
-            if(arr[i]< min){
-                min=arr[i];
+    public void min(int[] arr) {
+        int min = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
             }
         }
         System.out.println(min);
     }
-    public int minSecondElement(int[] arr2){
+
+    public int minSecondElement(int[] arr2) {
         int temp;
-        for(int i =0; i<arr2.length; i++)
-            for(int j =i+1; j<arr2.length; j++){
-                if(arr2[i]>arr2[j]){
-                    temp=arr2[i];
-                    arr2[i]=arr2[j];
-                    arr2[j]=temp;
+        for (int i = 0; i < arr2.length; i++)
+            for (int j = i + 1; j < arr2.length; j++) {
+                if (arr2[i] > arr2[j]) {
+                    temp = arr2[i];
+                    arr2[i] = arr2[j];
+                    arr2[j] = temp;
                 }
 
             }
-            return arr2[1];
+        return arr2[1];
     }
-    public int maxCount(int[] arr3){
-        int count =1;
+
+    public int maxCount(int[] arr3) {
+        int count = 1;
         int max = arr3[0];
-        for(int i =1; i<arr3.length; i++){
-            if(arr3[i]>max){
-                count+=1;
-                max=arr3[i];
+        for (int i = 1; i < arr3.length; i++) {
+            if (arr3[i] > max) {
+                count += 1;
+                max = arr3[i];
             }
         }
         return count;
     }
 
     public static void main(String[] args) {
-        Minimum minimum= new Minimum();
-        int[] array = {4,2,14,-1};
-        int[] array2 ={6,7,2,-5,-10,15,1};
-        int n= array2.length;
+        Minimum minimum = new Minimum();
+        int[] array = {4, 2, 14, -1};
+        int[] array2 = {6, 7, 2, -5, -10, 15, 1};
+        int n = array2.length;
         minimum.min(array);
         System.out.println(minimum.minSecondElement(array2));
         System.out.println(minimum.maxCount(array2));
-
-
-
     }
 }
